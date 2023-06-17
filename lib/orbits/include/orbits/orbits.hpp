@@ -181,7 +181,7 @@ namespace orbit
 		}
 		Orbit(int n, std::vector<vec::Dot> all_dots, std::string colour)
 		{
-			dots_.reserve(1000);
+			dots_.reserve(max_dots_);
 			for (int i = 0; i < n; i++)
 			{
 				dots_.push_back(all_dots[i]);
@@ -278,7 +278,7 @@ namespace orbit
 		}
 
 	private:
-		static const int max_dots_ = 1000;
+		static const int max_dots_ = 10000;
 		std::vector<vec::Dot> dots_{};
 		int used_amount_ = 0;
 		int delta_ = 0;
@@ -437,7 +437,6 @@ namespace calc
 
 		}				
 		cv::imshow(window, img);
-		cv::waitKey(10);
 	}
 
 }
